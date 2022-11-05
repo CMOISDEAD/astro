@@ -1,9 +1,37 @@
 return {
-  -- ui
   ["savq/melange"] = {},
   ["rebelot/kanagawa.nvim"] = {},
   ["mfussenegger/nvim-jdtls"] = {},
   ["sainnhe/gruvbox-material"] = {},
+  ["mrjones2014/lighthaus.nvim"] = {},
+  ["B4mbus/oxocarbon-lua.nvim"] = {},
+  ["folke/tokyonight.nvim"] = {},
+  ["lunarvim/darkplus.nvim"] = {},
+  -- begin dap
+  ["mfussenegger/nvim-dap"] = {
+    requires = {
+      "Pocco81/DAPInstall.nvim",
+      "theHamsta/nvim-dap-virtual-text",
+      "mfussenegger/nvim-dap-python",
+      "nvim-telescope/telescope-dap.nvim",
+      { "leoluz/nvim-dap-go", module = "dap-go" },
+      { "jbyuki/one-small-step-for-vimkind", module = "osv" },
+    },
+    config = require "user.plugins.nvim-dap",
+  },
+  ["mfussenegger/nvim-dap-python"] = {
+    config = require("dap-python").setup "~/Documents/programacion/python/.virtualenvs/debugpy/bin/python",
+  },
+  ["rcarriga/nvim-dap-ui"] = {
+    config = require("dapui").setup {},
+    -- config = require "user.plugins.nvim-dap-ui",
+  },
+  ["jayp0521/mason-nvim-dap.nvim"] = {},
+  -- end dap
+  ["catppuccin/nvim"] = {
+    as = "catppuccin",
+    config = require "user.plugins.catppuccin",
+  },
   ["EdenEast/nightfox.nvim"] = {
     config = require "user.plugins.nightfox",
   },
@@ -15,7 +43,6 @@ return {
     requires = "nvim-lua/plenary.nvim",
     config = function() require("todo-comments").setup {} end,
   },
-  -- utility
   ["ethanholz/nvim-lastplace"] = {
     config = require "user.plugins.nvim-lastplace",
   },
@@ -38,11 +65,13 @@ return {
       }
     end,
   },
-  -- git
   ["sindrets/diffview.nvim"] = {},
-  -- lsp
   ["folke/trouble.nvim"] = {
     requires = "kyazdani42/nvim-web-devicons",
     config = require "user.plugins.trouble",
+  },
+  ["lervag/vimtex"] = {},
+  ["iamcco/markdown-preview.nvim"] = {
+    config = function() vim.fn["mkdp#util#install"]() end,
   },
 }

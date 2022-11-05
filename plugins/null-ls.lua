@@ -10,5 +10,7 @@ return {
     null_ls.builtins.formatting.isort,
     -- Javascript
     null_ls.builtins.formatting.prettierd.with { extra_filetypes = { "rmd" } },
+    -- C
+    -- null_ls.builtins.formatting.clang_format,
   },
 }
