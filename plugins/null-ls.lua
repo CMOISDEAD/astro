@@ -9,8 +9,11 @@ return {
     null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.isort,
     -- Javascript
-    null_ls.builtins.formatting.prettierd.with { extra_filetypes = { "rmd" } },
+    null_ls.builtins.formatting.rome,
+    -- null_ls.builtins.formatting.prettierd.with { extra_filetypes = { "rmd" } },
     -- C
     -- null_ls.builtins.formatting.clang_format,
+    -- Markdown
+    -- null_ls.builtins.formatting.remark,
   },
 }

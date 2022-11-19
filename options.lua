@@ -17,5 +17,6 @@ return {
     status_diagnostics_enabled = true, -- enable diagnostics in statusline
     vimtex_view_general_viewer = "zathura",
     vimtext_view_method = "zathura",
+    user_emmet_leader_key = "<C-Z>",
   },
 }
