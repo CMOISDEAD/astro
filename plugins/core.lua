@@ -34,6 +34,7 @@ local buttons = {
 }
 
 return {
+  { "rcarriga/nvim-notify", enabled = true },
   {
     "goolord/alpha-nvim",
     requires = { "nvim-tree/nvim-web-devicons" },
@@ -49,12 +50,14 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-telescope/telescope-media-files.nvim",
-      'jvgrootveld/telescope-zoxide',
+      "nvim-telescope/telescope-bibtex.nvim",
+      "jvgrootveld/telescope-zoxide",
     },
     config = function(plugin, opts)
       require("plugins.configs.telescope")(plugin, opts)
       local telescope = require "telescope"
       telescope.load_extension "media_files"
+      telescope.load_extension "bibtex"
       telescope.load_extension "zoxide"
     end,
   },
@@ -64,5 +67,11 @@ return {
       require "plugins.configs.luasnip" (plugin, opts)
       require("luasnip.loaders.from_vscode").lazy_load { paths = { "~/.config/vscode_snippets/" } } -- load snippets paths
     end,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = { "jdtls", "clangd" },
+    },
   },
 }

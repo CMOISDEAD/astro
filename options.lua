@@ -1,4 +1,11 @@
 return {
+  o = {
+    foldcolumn = '0', -- '0' is not bad
+    foldlevel = 99,   -- Using ufo provider need a large value, feel free to decrease the value
+    foldlevelstart = 99,
+    foldenable = true,
+    guifont = "Iosevka Nerd Font:h12",
+  },
   opt = {
     relativenumber = true,
     number = true,
@@ -6,8 +13,8 @@ return {
     conceallevel = 2, -- enable conceal
     linebreak = true, -- linebreak soft wrap at words
     list = true,      -- show whitespace characters
-    -- listchars = { tab = "│→", extends = "⟩", precedes = "⟨", trail = "·", nbsp = "␣" },
-    -- showbreak = "↪ ",
+    listchars = { tab = "│→", extends = "⟩", precedes = "⟨", trail = "·", nbsp = "␣" },
+    showbreak = "↪ ",
     -- showtabline = 0, -- hide bufferline
     swapfile = false,
     wrap = true, -- soft wrap lines
@@ -20,5 +27,6 @@ return {
     diagnostics_mode = 3,            -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     icons_enabled = true,            -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
+    vimtex_view_method = 'zathura'
   }
 }

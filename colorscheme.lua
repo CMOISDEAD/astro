@@ -1,1 +1,1 @@
-return "darkplus"
+return "gruvbox-material"
