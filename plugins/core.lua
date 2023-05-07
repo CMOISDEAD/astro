@@ -34,7 +34,14 @@ local buttons = {
 }
 
 return {
-  { "rcarriga/nvim-notify", enabled = true },
+  { "rcarriga/nvim-notify", enabled = true,
+    config = function(plugin, opts)
+      require("plugins.configs.notify")(plugin, opts)
+      require("notify").setup({
+        background_colour = "#1d2021",
+      })
+    end
+  },
   {
     "goolord/alpha-nvim",
     requires = { "nvim-tree/nvim-web-devicons" },

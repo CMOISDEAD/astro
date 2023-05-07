@@ -5,9 +5,15 @@ return {
       local builtins = require("null-ls").builtins
       opts.sources = {
         -- diagnostics
-        builtins.diagnostics.eslint_d, --eslint_d
+        -- builtins.diagnostics.eslint,
         -- formatters
-        builtins.formatting.prettier,  -- prettierd
+        -- javacript 
+        builtins.formatting.prettierd,
+        -- python
+        builtins.formatting.black,
+        -- php
+        -- builtins.formatting.phpcsfixer,
+        builtins.formatting.pint,
       }
       return opts
     end,
