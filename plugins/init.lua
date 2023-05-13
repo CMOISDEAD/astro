@@ -20,23 +20,4 @@ return {
     config = function() require("notifier").setup {} end,
     enabled = false,
   },
-  -- {
-  --   "nvim-neorg/neorg",
-  --   build = ":Neorg sync-parsers",
-  --   opts = {
-  --     load = {
-  --       ["core.defaults"] = {},
-  --       ["core.norg.concealer"] = {},
-  --       ["core.norg.dirman"] = {
-  --         config = {
-  --           workspaces = {
-  --             notes = "~/notes",
-  --           },
-  --         },
-  --       },
-  --       ["core.export"] = {},
-  --     },
-  --   },
-  --   dependencies = { { "nvim-lua/plenary.nvim" } },
-  -- }
-}
+  }

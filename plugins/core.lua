@@ -10,7 +10,7 @@ local header = {
     [[ ▒▒▓  ▒ ░ ▒░▒░▒░ ░ ▒░▒░▒░ ░ ▒░   ░  ░]],
     [[   ░        ░ ░      ░ ░         ░   ]],
     [[ ░                                   ]],
-    [[               N E O V I M           ]],
+    [[              N E O V I M            ]],
   },
   opts = {
     position = "center",
@@ -47,9 +47,9 @@ return {
     requires = { "nvim-tree/nvim-web-devicons" },
     config = function(plugin, opts)
       require("plugins.configs.alpha")(plugin, opts)
-      local config = require("alpha.themes.theta").config
+      local config = require("alpha.themes.startify").config
       config.layout[2] = header;
-      config.layout[6] = buttons;
+      -- config.layout[6] = buttons;
       require("alpha").setup(config)
     end
   },
