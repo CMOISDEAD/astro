@@ -1,7 +1,8 @@
 return {
-  { "lervag/vimtex",              lazy = false },
-  { "lunarvim/darkplus.nvim",     lazy = false },
-  { "sainnhe/gruvbox-material",   lazy = false },
+  { "lervag/vimtex",               lazy = false },
+  { "lunarvim/darkplus.nvim",      lazy = false },
+  { "sainnhe/gruvbox-material",    lazy = false },
+  { 'projekt0n/github-nvim-theme', lazy = false },
   { "ethanholz/nvim-lastplace" },
   { "mfussenegger/nvim-jdtls" },
   { "p00f/clangd_extensions.nvim" },
@@ -20,4 +21,8 @@ return {
     config = function() require("notifier").setup {} end,
     enabled = false,
   },
+  {
+    "mattn/emmet-vim",
+    lazy = false
   }
+}

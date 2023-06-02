@@ -34,7 +34,9 @@ local buttons = {
 }
 
 return {
-  { "rcarriga/nvim-notify", enabled = true,
+  {
+    "rcarriga/nvim-notify",
+    enabled = true,
     config = function(plugin, opts)
       require("plugins.configs.notify")(plugin, opts)
       require("notify").setup({
@@ -47,9 +49,9 @@ return {
     requires = { "nvim-tree/nvim-web-devicons" },
     config = function(plugin, opts)
       require("plugins.configs.alpha")(plugin, opts)
-      local config = require("alpha.themes.startify").config
+      local config = require("alpha.themes.theta").config
       config.layout[2] = header;
-      -- config.layout[6] = buttons;
+      config.layout[6] = buttons;
       require("alpha").setup(config)
     end
   },

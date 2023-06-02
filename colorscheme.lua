@@ -1,1 +1,1 @@
-return "carbonfox"
+return "gruvbox-material"
