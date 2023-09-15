@@ -5,7 +5,7 @@ return {
       local builtins = require("null-ls").builtins
       opts.sources = {
         -- diagnostics
-        builtins.diagnostics.standardjs,
+        -- builtins.diagnostics.standardjs,
         -- formatters
         builtins.formatting.prettierd,
         builtins.formatting.black,

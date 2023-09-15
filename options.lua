@@ -10,6 +10,7 @@ return {
     relativenumber = true,
     number = true,
     spell = true,
+    spelllang = { "en_us", "es_es" },
     conceallevel = 2, -- enable conceal
     linebreak = true, -- linebreak soft wrap at words
     list = true,      -- show whitespace characters
