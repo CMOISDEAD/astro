@@ -1,4 +1,4 @@
-local dashboard = require("alpha.themes.dashboard")
+local dashboard = require "alpha.themes.dashboard"
 local header = {
   type = "text",
   val = {
@@ -16,13 +16,20 @@ local header = {
     position = "center",
     hl = "Type",
     wrap = "overflow",
-  }
+  },
 }
 
 local buttons = {
   type = "group",
   val = {
-    { type = "text",    val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
+    {
+      type = "text",
+      val = "Quick links",
+      opts = {
+        hl = "SpecialComment",
+        position = "center",
+      },
+    },
     { type = "padding", val = 1 },
     dashboard.button("SPC n", "  New file"),
     dashboard.button("SPC f f", "  Find file"),
@@ -38,22 +45,22 @@ return {
     "rcarriga/nvim-notify",
     enabled = true,
     config = function(plugin, opts)
-      require("plugins.configs.notify")(plugin, opts)
-      require("notify").setup({
+      require "plugins.configs.notify"(plugin, opts)
+      require("notify").setup {
         background_colour = "#1d2021",
-      })
-    end
+      }
+    end,
   },
   {
     "goolord/alpha-nvim",
     requires = { "nvim-tree/nvim-web-devicons" },
     config = function(plugin, opts)
-      require("plugins.configs.alpha")(plugin, opts)
+      require "plugins.configs.alpha"(plugin, opts)
       local config = require("alpha.themes.theta").config
-      config.layout[2] = header;
-      config.layout[6] = buttons;
+      config.layout[2] = header
+      config.layout[6] = buttons
       require("alpha").setup(config)
-    end
+    end,
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -63,7 +70,7 @@ return {
       "jvgrootveld/telescope-zoxide",
     },
     config = function(plugin, opts)
-      require("plugins.configs.telescope")(plugin, opts)
+      require "plugins.configs.telescope"(plugin, opts)
       local telescope = require "telescope"
       telescope.load_extension "media_files"
       telescope.load_extension "bibtex"
@@ -73,7 +80,7 @@ return {
   {
     "L3MON4D3/LuaSnip",
     config = function(plugin, opts)
-      require "plugins.configs.luasnip" (plugin, opts)
+      require "plugins.configs.luasnip"(plugin, opts)
       require("luasnip.loaders.from_vscode").lazy_load { paths = { "~/.config/vscode_snippets/" } } -- load snippets paths
     end,
   },

@@ -1,17 +1,17 @@
 return {
-  { "lervag/vimtex",               lazy = false },
-  { "lunarvim/darkplus.nvim",      lazy = false },
-  { "sekke276/dark_flat.nvim",     lazy = false },
-  { "sainnhe/gruvbox-material",    lazy = false },
+  { "lervag/vimtex", lazy = false },
+  { "lunarvim/darkplus.nvim", lazy = false },
+  { "sekke276/dark_flat.nvim", lazy = false },
+  { "sainnhe/gruvbox-material", lazy = false },
   { "projekt0n/github-nvim-theme", lazy = false },
   {
     "ziontee113/icon-picker.nvim",
     lazy = false,
     config = function()
-      require("icon-picker").setup({
-        disable_legacy_commands = true
-      })
-    end
+      require("icon-picker").setup {
+        disable_legacy_commands = true,
+      }
+    end,
   },
   { "ethanholz/nvim-lastplace" },
   { "p00f/clangd_extensions.nvim" },
@@ -32,13 +32,31 @@ return {
   },
   {
     "mattn/emmet-vim",
-    lazy = false
+    lazy = false,
   },
-  { "mfussenegger/nvim-jdtls", enabled = false },
-  { 
-    "javiorfo/nvim-soil",
-    lazy = true,
-    ft = "plantuml",
-    enabled = false
-  }
+  {
+    "rest-nvim/rest.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    ft = { "http", "json" },
+    -- latest commit breaks formatting
+    commit = "8b62563",
+    opts = {
+      result_split_in_place = true,
+    },
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+  },
+  {
+    "rcasia/neotest-java",
+  },
+  {
+    "vimwiki/vimwiki",
+  },
+  {
+    "chomosuke/typst-preview.nvim",
+    ft = "typst",
+    version = "0.1.*",
+    build = function() require("typst-preview").update() end,
+  },
 }

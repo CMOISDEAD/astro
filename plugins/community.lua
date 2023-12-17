@@ -9,7 +9,7 @@ return {
     },
   },
   -- scrolling
-  { import = "astrocommunity.scrolling.cinnamon-nvim" },
+  -- { import = "astrocommunity.scrolling.cinnamon-nvim" },
   -- colorscheme
   { import = "astrocommunity.colorscheme.oxocarbon-nvim" },
   { import = "astrocommunity.colorscheme.everforest" },
@@ -17,54 +17,83 @@ return {
   { import = "astrocommunity.completion.copilot-lua" },
   -- note-taking
   { import = "astrocommunity.note-taking.obsidian-nvim" },
-  { import = "astrocommunity.note-taking.neorg", },
-  {"neorg",
+  { import = "astrocommunity.note-taking.neorg" },
+  {
+    "neorg",
     opts = {
-        load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.keybinds"] = {}, -- Adds default keybindings
-          ["core.completion"] = {
-            config = {
-              engine = "nvim-cmp",
-            },
-          }, -- Enables support for completion plugins
-          ["core.journal"] = {}, -- Enables support for the journal module
-          ["core.export"] = {},
-          ["core.export.markdown"] = {
-            config = {
-              extension = "md",
-              extensions = "all",
-              metadata = {
-                ["start"] = "---",
-                ["end"] = "---",
-              }
-            }
+      load = {
+        ["core.defaults"] = {},
+        ["core.concealer"] = {},
+        ["core.keybinds"] = {},
+        ["core.completion"] = {
+          config = {
+            engine = "nvim-cmp",
           },
-          ["core.summary"] = {},
-          ["core.presenter"] = {
-            config = {
-              zen_mode = "zen-mode"
-            }
-          },
-          ["core.dirman"] = { -- Manages Neorg workspaces
-            config = {
-              workspaces = {
-                notes = "~/projects/notes",
-                college = "~/projects/college",
-                dev = "~/projects/dev",
-              },
-              default_workspace = "notes",
+        },
+        ["core.journal"] = {},
+        ["core.export"] = {},
+        ["core.export.markdown"] = {
+          config = {
+            extension = "md",
+            extensions = "all",
+            metadata = {
+              ["start"] = "---",
+              ["end"] = "---",
             },
           },
         },
-      }
+        ["core.summary"] = {},
+        ["core.presenter"] = {
+          config = {
+            zen_mode = "zen-mode",
+          },
+        },
+        ["core.dirman"] = {
+          config = {
+            workspaces = {
+              notes = "~/projects/notes",
+              college = "~/projects/college",
+              dev = "~/projects/dev",
+            },
+            default_workspace = "notes",
+          },
+        },
+      },
     },
+  },
   -- editor plugins
-  { import = "astrocommunity.editing-support.zen-mode-nvim" } ,
+  { import = "astrocommunity.editing-support.zen-mode-nvim" },
+  { import = "astrocommunity.editing-support.neogen" },
+  { import = "astrocommunity.editing-support.todo-comments-nvim" },
   -- git
   { import = "astrocommunity.git.neogit" },
   -- markdown & latext
   { import = "astrocommunity.markdown-and-latex.vimtex" },
-  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" }
+  --  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  -- pack
+  { import = "astrocommunity.pack.full-dadbod" },
+  { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.astro" },
+  -- test
+  { import = "astrocommunity.test.neotest" },
+  {
+    "neotest",
+    opts = {
+      adapters = {},
+    },
+  },
+  -- utility
+  {
+    import = "astrocommunity.utility.noice-nvim",
+  },
+  {
+    "folke/noice.nvim",
+    opts = {
+      routes = {
+        { filter = { event = "msg_show", find = "%d+L,%s%d+B" }, opts = { skip = true } }, -- skip save notifications
+      },
+    },
+  },
+  -- workflow
+  { import = "astrocommunity.workflow.hardtime-nvim" },
 }

@@ -2,11 +2,11 @@ return {
   n = {
     L = {
       function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-      desc = "Next buffer"
+      desc = "Next buffer",
     },
     H = {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-      desc = "Previous buffer"
+      desc = "Previous buffer",
     },
     ["<leader>fz"] = { "<cmd>Telescope zoxide list<cr>", desc = "Find in zoxide" },
     ["<leader>fe"] = { "<cmd>IconPickerNormal<cr>", desc = "Find emoji" },
@@ -25,5 +25,7 @@ return {
       end,
       desc = "Close buffer",
     },
+    ["<leader>r"] = { name = "Rest Nvim" },
+    ["<leader>rr"] = { "<Plug>RestNvim", desc = "Run HTTP request" },
   },
 }
