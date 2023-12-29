@@ -8,6 +8,8 @@ return {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
+    ["<C-u>"] = { "<C-u>zz" },
+    ["<C-d>"] = { "<C-d>zz" },
     ["<leader>fz"] = { "<cmd>Telescope zoxide list<cr>", desc = "Find in zoxide" },
     ["<leader>fe"] = { "<cmd>IconPickerNormal<cr>", desc = "Find emoji" },
     ["<leader>fE"] = { "<cmd>IconPickerYank<cr>", desc = "Find emoji and copy" },

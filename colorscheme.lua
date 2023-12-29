@@ -1,1 +1,1 @@
-return "dark_flat"
+return "gruvbox-material"

@@ -18,13 +18,6 @@ return {
         lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
         lastplace_open_folds = true,
       }
-    end
+    end,
   },
-  {
-    "kylechui/nvim-surround",
-    lazy = false,
-    config = function()
-      require("nvim-surround").setup {}
-    end
-  }
 }

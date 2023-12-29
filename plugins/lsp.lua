@@ -1,4 +1,15 @@
 return {
+  { "mfussenegger/nvim-jdtls" },
+  {
+    "jose-elias-alvarez/typescript.nvim",
+    init = function() table.insert(astronvim.lsp.skip_setup, "tsserver") end,
+    ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+    opts = function()
+      return {
+        server = require("astronvim.utils.lsp").config "tsserver",
+      }
+    end,
+  },
   {
     "p00f/clangd_extensions.nvim",
     init = function() table.insert(astronvim.lsp.skip_setup, "clangd") end,
@@ -10,23 +21,4 @@ return {
       }
     end,
   },
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    opts = function(_, opts)
-      local builtins = require("null-ls").builtins
-      opts.sources = {
-        -- diagnostics
-        -- builtins.diagnostics.standardjs,
-        -- formatters
-        builtins.formatting.prettierd,
-        builtins.formatting.prettier.with {
-          filetypes = { "astro" },
-        },
-        builtins.formatting.black,
-        builtins.formatting.pint,
-      }
-      return opts
-    end,
-  },
-  { "mfussenegger/nvim-jdtls" },
 }
