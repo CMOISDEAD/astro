@@ -2,8 +2,14 @@ return {
   "AstroNvim/astrocommunity",
   -- bars and lines
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
+  -- scrolling
+  -- { import = "astrocommunity.scrolling.satellite-nvim" },
+  -- color
+  { import = "astrocommunity.color.transparent-nvim" },
   -- colorscheme
   { import = "astrocommunity.colorscheme.everforest" },
+  { import = "astrocommunity.colorscheme.mini-base16" },
+  { import = "astrocommunity.colorscheme.melange-nvim" },
   -- completion
   { import = "astrocommunity.completion.copilot-lua" },
   -- note-taking
@@ -40,11 +46,13 @@ return {
   { import = "astrocommunity.git.neogit" },
   -- markdown & latext
   { import = "astrocommunity.markdown-and-latex.vimtex" },
-  -- { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
   -- pack
   { import = "astrocommunity.pack.full-dadbod" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.astro" },
+  { import = "astrocommunity.pack.quarto" },
+  { import = "astrocommunity.pack.typst" },
   -- workflow
   { import = "astrocommunity.workflow.hardtime-nvim" },
   -- motion
@@ -53,4 +61,6 @@ return {
   { import = "astrocommunity.motion.nvim-surround" },
   -- code
   { import = "astrocommunity.code-runner.overseer-nvim" },
+  -- media
+  { import = "astrocommunity.media.vim-wakatime" },
 }

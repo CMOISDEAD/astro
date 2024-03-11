@@ -2,7 +2,16 @@ return {
   { "lervag/vimtex", lazy = false },
   { "lunarvim/darkplus.nvim", lazy = false },
   { "sekke276/dark_flat.nvim", lazy = false },
-  { "sainnhe/gruvbox-material", lazy = false },
+  -- { "sainnhe/gruvbox-material", lazy = false },
+  {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = true,
+    opts = {
+      transparent_mode = true,
+      dim_inactive = false,
+    },
+  },
   { "projekt0n/github-nvim-theme", lazy = false },
   {
     "ziontee113/icon-picker.nvim",
@@ -24,12 +33,15 @@ return {
     lazy = false,
     config = function() require("hop").setup() end,
   },
-  {
-    "vigoux/notifier.nvim",
-    lazy = false,
-    config = function() require("notifier").setup {} end,
-    enabled = false,
-  },
+  -- {
+  --   "j-hui/fidget.nvim",
+  --   lazy = false,
+  --   opts = {
+  --     notification = {
+  --       override_vim_notify = true,
+  --     },
+  --   },
+  -- },
   {
     "mattn/emmet-vim",
     lazy = false,

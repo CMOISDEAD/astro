@@ -1,5 +1,5 @@
 return {
-  { "mfussenegger/nvim-jdtls" },
+  -- { "mfussenegger/nvim-jdtls" },
   {
     "jose-elias-alvarez/typescript.nvim",
     init = function() table.insert(astronvim.lsp.skip_setup, "tsserver") end,
