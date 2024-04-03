@@ -50,6 +50,14 @@ return {
   -- pack
   { import = "astrocommunity.pack.full-dadbod" },
   { import = "astrocommunity.pack.java" },
+  {
+    "jay-babu/mason-null-ls.nvim",
+    opts = {
+      handlers = {
+        clang_format = function() end,
+      },
+    },
+  },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.quarto" },
   { import = "astrocommunity.pack.typst" },
